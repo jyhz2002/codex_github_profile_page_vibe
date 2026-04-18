@@ -1,5 +1,5 @@
 import { PAGE_HREFS } from './content';
-import type { Locale, LocaleBundle, PageId, ProjectEntry, RepositoryEntry } from './types';
+import type { LocaleBundle, PageId, ProjectEntry, RepositoryEntry } from './types';
 
 const escapeHtml = (value: string): string =>
   value
@@ -19,7 +19,7 @@ const navItems: Array<{ id: PageId; key: 'home' | 'about' | 'projects' | 'contac
   { id: 'contact', key: 'contact' }
 ];
 
-const renderShellHeader = (page: PageId, locale: Locale, bundle: LocaleBundle): string => {
+const renderShellHeader = (page: PageId, bundle: LocaleBundle): string => {
   const { site, copy } = bundle;
 
   return `
@@ -46,14 +46,6 @@ const renderShellHeader = (page: PageId, locale: Locale, bundle: LocaleBundle): 
             )
             .join('')}
         </nav>
-        <div class="locale-toggle" aria-label="${escapeHtml(copy.nav.languageLabel)}">
-          <button class="locale-toggle__button ${locale === 'ko' ? 'is-active' : ''}" type="button" data-locale="ko">
-            KO
-          </button>
-          <button class="locale-toggle__button ${locale === 'en' ? 'is-active' : ''}" type="button" data-locale="en">
-            EN
-          </button>
-        </div>
       </div>
     </header>
   `;
@@ -404,11 +396,11 @@ const renderFooter = (bundle: LocaleBundle): string => {
   `;
 };
 
-export const renderPage = (page: PageId, locale: Locale, bundle: LocaleBundle): string => `
+export const renderPage = (page: PageId, bundle: LocaleBundle): string => `
   <div class="page-shell">
     <div class="page-bg page-bg--top"></div>
     <div class="page-bg page-bg--bottom"></div>
-    ${renderShellHeader(page, locale, bundle)}
+    ${renderShellHeader(page, bundle)}
     <main id="main-content" class="page-main">
       ${renderPageBody(page, bundle)}
     </main>

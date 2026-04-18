@@ -1,31 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700;800&display=swap');
 
 :root {
   color-scheme: light;
-  font-family: 'Space Grotesk', sans-serif;
-  line-height: 1.5;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.72;
   font-weight: 400;
-  color: #f7f4ef;
+  color: #f8f5ff;
   background:
-    radial-gradient(circle at top, rgba(255, 181, 107, 0.2), transparent 28%),
-    linear-gradient(160deg, #16161e 0%, #0b1728 52%, #092f2f 100%);
+    radial-gradient(circle at 16% 16%, rgba(139, 92, 246, 0.3), transparent 28%),
+    radial-gradient(circle at 84% 10%, rgba(255, 181, 107, 0.18), transparent 22%),
+    radial-gradient(circle at 78% 70%, rgba(244, 114, 182, 0.16), transparent 24%),
+    linear-gradient(155deg, #120f20 0%, #0b1530 48%, #171227 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --page-max-width: 1180px;
-  --surface: rgba(14, 20, 29, 0.72);
-  --surface-strong: rgba(18, 25, 36, 0.92);
+  --surface: rgba(15, 18, 34, 0.74);
+  --surface-strong: rgba(18, 23, 44, 0.94);
   --surface-soft: rgba(255, 255, 255, 0.08);
-  --surface-line: rgba(255, 255, 255, 0.13);
-  --text-primary: #f7f4ef;
-  --text-secondary: #d3d8df;
-  --text-muted: #aeb7c2;
-  --accent: #ffb56b;
-  --accent-strong: #ff7a5c;
-  --accent-quiet: rgba(255, 181, 107, 0.12);
-  --highlight: #8cf4d0;
-  --shadow: 0 24px 80px rgba(3, 7, 16, 0.28);
+  --surface-line: rgba(208, 191, 255, 0.16);
+  --text-primary: #f8f5ff;
+  --text-secondary: #d7d1e5;
+  --text-muted: #aea7c5;
+  --accent: #b794ff;
+  --accent-strong: #f59ad5;
+  --accent-warm: #ffb56b;
+  --accent-quiet: rgba(183, 148, 255, 0.16);
+  --highlight: #cdb7ff;
+  --shadow: 0 26px 90px rgba(4, 6, 18, 0.34);
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 18px;
@@ -82,9 +85,9 @@ img {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 52px 52px;
+    linear-gradient(rgba(183, 148, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 148, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 88%);
   pointer-events: none;
   z-index: 0;
@@ -100,19 +103,19 @@ img {
 }
 
 .page-bg--top {
-  width: 30rem;
-  height: 30rem;
+  width: 32rem;
+  height: 32rem;
   top: -8rem;
   right: -8rem;
-  background: radial-gradient(circle, rgba(255, 122, 92, 0.42), transparent 68%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.42), transparent 68%);
 }
 
 .page-bg--bottom {
   width: 24rem;
   height: 24rem;
-  bottom: 4rem;
-  left: -4rem;
-  background: radial-gradient(circle, rgba(140, 244, 208, 0.24), transparent 70%);
+  bottom: 3rem;
+  left: -5rem;
+  background: radial-gradient(circle, rgba(245, 154, 213, 0.24), transparent 70%);
   animation-delay: -6s;
 }
 
@@ -143,21 +146,27 @@ img {
   align-items: center;
   gap: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 .brand-mark__dot {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.78rem;
+  height: 0.78rem;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  box-shadow: 0 0 0 8px rgba(255, 181, 107, 0.14);
+  box-shadow: 0 0 0 8px rgba(183, 148, 255, 0.18);
+}
+
+.brand-mark__text {
+  font-size: 1.04rem;
 }
 
 .brand-role {
   margin: 0;
   color: var(--text-muted);
   max-width: 28rem;
+  font-size: 0.96rem;
+  line-height: 1.65;
 }
 
 .header-controls {
@@ -175,16 +184,19 @@ img {
   gap: 0.4rem;
   padding: 0.45rem;
   border: var(--border);
-  background: rgba(14, 20, 29, 0.66);
+  background:
+    linear-gradient(135deg, rgba(183, 148, 255, 0.08), rgba(255, 255, 255, 0.04)),
+    rgba(15, 18, 34, 0.72);
   border-radius: var(--radius-sm);
   backdrop-filter: blur(18px);
 }
 
 .site-nav__link,
 .locale-toggle__button {
-  padding: 0.75rem 1rem;
+  padding: 0.78rem 1.02rem;
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
+  font-size: 0.95rem;
   transition:
     background-color 180ms var(--ease),
     color 180ms var(--ease),
@@ -201,7 +213,7 @@ img {
 
 .site-nav__link.is-active,
 .locale-toggle__button.is-active {
-  background: linear-gradient(135deg, rgba(255, 181, 107, 0.16), rgba(255, 122, 92, 0.16));
+  background: linear-gradient(135deg, rgba(183, 148, 255, 0.22), rgba(245, 154, 213, 0.16));
   color: var(--text-primary);
 }
 
@@ -210,7 +222,7 @@ img {
   padding: 0.35rem;
   border-radius: var(--radius-sm);
   border: var(--border);
-  background: rgba(14, 20, 29, 0.66);
+  background: rgba(15, 18, 34, 0.66);
   backdrop-filter: blur(18px);
 }
 
@@ -259,8 +271,24 @@ img {
 }
 
 .hero-copy {
+  position: relative;
+  overflow: hidden;
   padding: clamp(2rem, 5vw, 4rem);
   border-radius: var(--radius-xl);
+  background:
+    linear-gradient(145deg, rgba(183, 148, 255, 0.18), rgba(255, 255, 255, 0.03) 40%, rgba(245, 154, 213, 0.09)),
+    var(--surface);
+}
+
+.hero-copy::after {
+  content: '';
+  position: absolute;
+  inset: auto -5rem -7rem auto;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(183, 148, 255, 0.2), transparent 70%);
+  pointer-events: none;
 }
 
 .hero-title,
@@ -269,19 +297,19 @@ img {
 .contact-card h2,
 .site-footer h2 {
   margin: 0;
-  font-family: 'Fraunces', serif;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  font-family: 'Gowun Batang', serif;
+  line-height: 1.24;
+  letter-spacing: -0.02em;
 }
 
 .hero-title {
-  font-size: clamp(3.2rem, 8vw, 7rem);
-  max-width: 13ch;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  max-width: 11ch;
 }
 
 .page-title {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  max-width: 11ch;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  max-width: 12ch;
 }
 
 .hero-intro,
@@ -298,7 +326,8 @@ img {
 .hero-intro,
 .page-description {
   max-width: 44rem;
-  font-size: 1.08rem;
+  font-size: 1.04rem;
+  line-height: 1.9;
 }
 
 .hero-actions,
@@ -315,7 +344,7 @@ img {
   align-items: center;
   justify-content: center;
   min-height: 3.25rem;
-  padding: 0.9rem 1.3rem;
+  padding: 0.92rem 1.34rem;
   border-radius: var(--radius-sm);
   border: var(--border);
   transition:
@@ -336,21 +365,25 @@ img {
 }
 
 .button--primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #160d08;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong), var(--accent-warm));
+  color: #160d1a;
   border-color: transparent;
   font-weight: 700;
 }
 
 .button--secondary {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(183, 148, 255, 0.08);
+  border-color: rgba(183, 148, 255, 0.2);
 }
 
 .hero-panel {
-  padding: 1.5rem;
+  padding: 1.6rem;
   border-radius: var(--radius-xl);
   display: grid;
   align-self: end;
+  background:
+    linear-gradient(140deg, rgba(183, 148, 255, 0.12), rgba(255, 255, 255, 0.03)),
+    rgba(15, 18, 34, 0.82);
 }
 
 .hero-panel__stack {
@@ -362,16 +395,17 @@ img {
 .project-card__label,
 .timeline-item__period {
   margin: 0 0 0.35rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
   color: var(--highlight);
+  font-weight: 700;
 }
 
 .hero-panel__value,
 .hero-panel__link {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .hero-panel__link {
@@ -381,9 +415,9 @@ img {
 .eyebrow {
   margin: 0 0 1rem;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
   font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .eyebrow--muted {
@@ -398,6 +432,9 @@ img {
 .section--accent {
   padding: clamp(1.4rem, 4vw, 2rem);
   border-radius: var(--radius-xl);
+  background:
+    linear-gradient(140deg, rgba(183, 148, 255, 0.14), rgba(255, 255, 255, 0.03)),
+    var(--surface);
 }
 
 .section-heading {
@@ -406,7 +443,7 @@ img {
 }
 
 .section-heading h2 {
-  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-size: clamp(1.72rem, 3vw, 2.7rem);
   max-width: 20ch;
 }
 
@@ -455,7 +492,8 @@ img {
 .timeline-item h3,
 .repository-row__name {
   margin: 0 0 0.65rem;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
 }
 
 .bento-card p,
@@ -465,6 +503,7 @@ img {
 .repository-row__description,
 .contact-card p {
   margin: 0;
+  line-height: 1.8;
 }
 
 .story-card {
@@ -476,7 +515,7 @@ img {
 
 .story-card--light {
   background:
-    linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    linear-gradient(140deg, rgba(183, 148, 255, 0.12), rgba(255, 255, 255, 0.03)),
     rgba(10, 17, 26, 0.72);
 }
 
@@ -506,22 +545,22 @@ img {
   display: inline-flex;
   align-items: center;
   min-height: 2rem;
-  padding: 0.35rem 0.7rem;
+  padding: 0.38rem 0.74rem;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(183, 148, 255, 0.18);
 }
 
 .tag {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(183, 148, 255, 0.08);
   color: var(--text-primary);
 }
 
 .pill {
   background: var(--accent-quiet);
   color: var(--accent);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
 }
 
 .project-card {
@@ -542,13 +581,15 @@ img {
 }
 
 .project-card__summary {
-  font-size: 1.02rem;
+  font-size: 1rem;
+  line-height: 1.85;
 }
 
 .project-card__list {
   margin: 0;
   padding-left: 1.1rem;
   color: var(--text-secondary);
+  line-height: 1.85;
 }
 
 .project-card__section {
@@ -573,6 +614,9 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  background:
+    linear-gradient(140deg, rgba(183, 148, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(15, 18, 34, 0.76);
 }
 
 .repository-row__cta {
@@ -587,7 +631,7 @@ img {
 
 .contact-card--accent {
   background:
-    linear-gradient(140deg, rgba(255, 181, 107, 0.18), rgba(255, 122, 92, 0.08)),
+    linear-gradient(140deg, rgba(183, 148, 255, 0.24), rgba(245, 154, 213, 0.12)),
     rgba(11, 18, 28, 0.76);
 }
 
@@ -603,20 +647,22 @@ img {
   align-content: space-between;
   border-radius: var(--radius-lg);
   border: var(--border);
-  background: rgba(11, 18, 28, 0.68);
+  background:
+    linear-gradient(140deg, rgba(183, 148, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(11, 18, 28, 0.7);
   box-shadow: var(--shadow);
 }
 
 .contact-link__label {
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .contact-link__value {
   color: var(--text-primary);
-  font-size: 1.05rem;
+  font-size: 1rem;
   word-break: break-word;
 }
 
@@ -628,6 +674,9 @@ img {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1.25rem;
+  background:
+    linear-gradient(140deg, rgba(183, 148, 255, 0.12), rgba(255, 255, 255, 0.03)),
+    rgba(15, 18, 34, 0.82);
 }
 
 .skip-link {
@@ -659,7 +708,7 @@ img {
 .contact-link:focus-visible,
 .repository-row:focus-visible,
 .brand-mark:focus-visible {
-  outline: 3px solid rgba(140, 244, 208, 0.7);
+  outline: 3px solid rgba(183, 148, 255, 0.7);
   outline-offset: 3px;
 }
 
@@ -771,4 +820,3 @@ img {
     transform: none;
   }
 }
-
