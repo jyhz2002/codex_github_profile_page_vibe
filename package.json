@@ -1,0 +1,17 @@
+{
+  "name": "codex-github-profile-page-vibe",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "typescript": "^5.9.3",
+    "vite": "^4.5.0"
+  }
+}
